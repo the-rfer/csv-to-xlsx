@@ -18,6 +18,6 @@ dist -> csv-to-xlsx-win32-x64 -> csv-to-xlsx.exe
 
 ## Como Usar a Aplicação
 
-1. Escolha o ficheiro CSV;
-2. Exporte o ficheiro.
-   Por defeito, o ficheiro será exportado para `user/documentos/downloads`.
+1. Clique em 'Escolha o ficheiro CSV';
+2. Clique em 'Exporte o ficheiro';
+   Por defeito, o ficheiro será exportado para `user/downloads`.
