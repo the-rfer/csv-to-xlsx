@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <head>
+            <meta charset="UTF-8" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <title>CSV para XLSX</title>
+            <link rel="stylesheet" href="style.css" />
+        </head>
+    </head>
+    <body>
+        <h1>Transformar CSV em XLSX</h1>
+        <p>Selecione o arquivo CSV para converter para XLSX</p>
+        <button id="selectFileBtn">Selecione o ficheiro CSV</button>
+        <div id="filePath"></div>
+        <button id="exportXlsxBtn" disabled>Exportar para XLSX</button>
+
+        <footer>
+            Created by Rúben Fernandes &#8212;
+            <a id="githubLink" href="https://github.com/the-rfer">
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                    alt="GitHub Logo"
+                />
+                GitHub
+            </a>
+        </footer>
+
+        <script>
+            let selectedFilePath = null;
+            let tableData = null;
+
+            // Handle file selection
+            document
+                .getElementById('selectFileBtn')
+                .addEventListener('click', async () => {
+                    selectedFilePath = await window.electronAPI.selectFile();
+                    if (selectedFilePath) {
+                        document.getElementById(
+                            'filePath'
+                        ).innerText = `Selected: ${selectedFilePath}`;
+
+                        // Process the CSV file
+                        tableData = await window.electronAPI.processCSV(
+                            selectedFilePath
+                        );
+                        console.log(tableData); // Log table data for debugging
+
+                        // Enable the export button once the CSV is processed
+                        document.getElementById(
+                            'exportXlsxBtn'
+                        ).disabled = false;
+                    }
+                });
+
+            // Handle XLSX export
+            document
+                .getElementById('exportXlsxBtn')
+                .addEventListener('click', async () => {
+                    if (tableData && selectedFilePath) {
+                        const result = await window.electronAPI.exportXlsx(
+                            tableData
+                        );
+                        alert(result); // Notify the user
+                    }
+                });
+
+            document
+                .getElementById('githubLink')
+                .addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    console.log('GitHub link clicked!');
+                    window.electronAPI.openExternal(
+                        'https://github.com/the-rfer'
+                    ); // Open the GitHub link
+                });
+        </script>
+    </body>
+</html>

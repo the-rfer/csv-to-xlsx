@@ -1,0 +1,76 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to remove scroll */
+}
+
+h1 {
+    color: #333; /* Dark gray color for the heading */
+}
+
+p {
+    color: #666; /* Medium gray color for the paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin: 5px; /* Space around buttons */
+}
+
+button:disabled {
+    background-color: #ccc; /* Gray background for disabled button */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#filePath {
+    margin-top: 20px; /* Space above file path display */
+    font-weight: bold; /* Bold text for file path */
+    color: #333; /* Dark gray color for file path */
+}
+
+/* Footer styles */
+footer {
+    margin-top: 20px; /* Space above the footer */
+    font-size: 14px; /* Smaller font size for footer */
+    color: #666; /* Medium gray color */
+    position: absolute; /* Position it at the bottom */
+    bottom: 20px; /* Space from the bottom */
+    text-align: center; /* Center the text */
+    width: 100%; /* Full width */
+}
+
+footer a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer img {
+    width: 16px; /* Width for the GitHub logo */
+    vertical-align: middle; /* Align with text */
+    margin-left: 5px; /* Space to the left of the logo */
+}
