@@ -5,7 +5,7 @@
 Para construir o projeto, execute o seguinte comando:
 
 ```bash
-npm install; npm run create
+npm install && npm run create
 ```
 
 ## Como Executar a Aplicação
