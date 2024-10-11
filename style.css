@@ -1,76 +1,73 @@
-/* style.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the content horizontally */
-    justify-content: center; /* Center the content vertically */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow to remove scroll */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 h1 {
-    color: #333; /* Dark gray color for the heading */
+    color: #333;
 }
 
 p {
-    color: #666; /* Medium gray color for the paragraph */
-    margin-bottom: 20px; /* Space below the paragraph */
+    color: #666;
+    margin-bottom: 20px;
 }
 
 button {
-    background-color: #007bff; /* Blue background */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding around the text */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: background-color 0.3s; /* Smooth transition */
-    margin: 5px; /* Space around buttons */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
 }
 
 button:disabled {
-    background-color: #ccc; /* Gray background for disabled button */
-    cursor: not-allowed; /* Change cursor to not-allowed */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 #filePath {
-    margin-top: 20px; /* Space above file path display */
-    font-weight: bold; /* Bold text for file path */
-    color: #333; /* Dark gray color for file path */
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Footer styles */
 footer {
-    margin-top: 20px; /* Space above the footer */
-    font-size: 14px; /* Smaller font size for footer */
-    color: #666; /* Medium gray color */
-    position: absolute; /* Position it at the bottom */
-    bottom: 20px; /* Space from the bottom */
-    text-align: center; /* Center the text */
-    width: 100%; /* Full width */
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 footer a {
-    color: #007bff; /* Link color */
-    text-decoration: none; /* Remove underline from links */
+    color: #007bff;
+    text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
 }
 
 footer img {
-    width: 16px; /* Width for the GitHub logo */
-    vertical-align: middle; /* Align with text */
-    margin-left: 5px; /* Space to the left of the logo */
+    width: 16px;
+    vertical-align: middle;
+    margin-left: 5px;
 }

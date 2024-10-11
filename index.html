@@ -33,7 +33,7 @@
             let selectedFilePath = null;
             let tableData = null;
 
-            // Handle file selection
+            // file selection
             document
                 .getElementById('selectFileBtn')
                 .addEventListener('click', async () => {
@@ -43,20 +43,18 @@
                             'filePath'
                         ).innerText = `Selected: ${selectedFilePath}`;
 
-                        // Process the CSV file
                         tableData = await window.electronAPI.processCSV(
                             selectedFilePath
                         );
-                        console.log(tableData); // Log table data for debugging
+                        console.log(tableData);
 
-                        // Enable the export button once the CSV is processed
                         document.getElementById(
                             'exportXlsxBtn'
                         ).disabled = false;
                     }
                 });
 
-            // Handle XLSX export
+            // XLSX export
             document
                 .getElementById('exportXlsxBtn')
                 .addEventListener('click', async () => {
@@ -64,18 +62,18 @@
                         const result = await window.electronAPI.exportXlsx(
                             tableData
                         );
-                        alert(result); // Notify the user
+                        alert(result);
                     }
                 });
 
             document
                 .getElementById('githubLink')
                 .addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default anchor behavior
+                    event.preventDefault();
                     console.log('GitHub link clicked!');
                     window.electronAPI.openExternal(
                         'https://github.com/the-rfer'
-                    ); // Open the GitHub link
+                    );
                 });
         </script>
     </body>

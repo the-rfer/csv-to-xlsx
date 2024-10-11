@@ -11,8 +11,8 @@ function createWindow() {
         height: 600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
-            contextIsolation: true, // Enable context isolation
-            nodeIntegration: false, // Keep node integration disabled
+            contextIsolation: true,
+            nodeIntegration: false,
         },
     });
 
@@ -24,7 +24,7 @@ function createWindow() {
             properties: ['openFile'],
         });
         if (!canceled) {
-            return filePaths[0]; // Return the file path to renderer
+            return filePaths[0];
         }
     });
 
@@ -40,14 +40,14 @@ function createWindow() {
     });
 
     ipcMain.handle('export-xlsx', async (event, tableData) => {
-        const downloadsPath = path.join(os.homedir(), 'Downloads'); // Default to the Downloads folder
-        const outputPath = path.join(downloadsPath, 'output.xlsx'); // Name of the file
+        const downloadsPath = path.join(os.homedir(), 'Downloads');
+        const outputPath = path.join(downloadsPath, 'output.xlsx');
 
         const worksheet = XLSX.utils.json_to_sheet(tableData);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
 
-        XLSX.writeFile(workbook, outputPath); // Save file to Downloads
+        XLSX.writeFile(workbook, outputPath);
 
         return `File saved to: ${outputPath}`;
     });
