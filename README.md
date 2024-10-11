@@ -1,7 +1,23 @@
-App para transformar ficheiros CSV em XLSX.
-Correr app: dist -> csv-to-xlsx-win32-x64 -> csv-to-xlsx.exe
+# Csv to Xlsx
 
-1. Escolher ficheiro csv;
-2. exportar fichero.
+## Comandos de Construção
 
-por defeito, o ficheiro será exportado para user/documentos/downloads.
+Para construir o projeto, execute o seguinte comando:
+
+```bash
+npm install; npm run create
+```
+
+## Como Executar a Aplicação
+
+Para executar a aplicação, vá até a seguinte pasta:
+
+```css
+dist -> csv-to-xlsx-win32-x64 -> csv-to-xlsx.exe
+```
+
+## Como Usar a Aplicação
+
+1. Escolha o ficheiro CSV;
+2. Exporte o ficheiro.
+   Por defeito, o ficheiro será exportado para `user/documentos/downloads`.
